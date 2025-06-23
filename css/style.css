@@ -1,0 +1,675 @@
+/*
+
+   Variáveis e Tema (Claro/Escuro)
+
+   */
+
+:root {
+--bg-page: #FFFFFF; /* Fundo geral em modo claro */
+ --text-page: #333333;  /* Texto geral em modo claro */
+}
+
+html.dark-mode {
+--bg-page: #121212; /* Fundo general em modo escuro */
+ --text-page: #EEEEEE; /* Texto geral em modo escuro */
+}
+
+body {
+background-color: var(--bg-page) !important;
+color: var(--text-page) !important;
+}
+
+body a,
+.navbar a,
+.footer-beauren a {
+ color: #B38B52;
+}
+
+
+
+/*Navbar
+ Estilos específicos*/
+.navbar-rose {
+background-color: #f4f1ea; /* Cor de fundo rosê da navbar */
+}
+
+html.dark-mode .navbar-rose {
+ background-color: var(--bg-page) !important; /* No dark mode, a navbar segue o fundo do tema */
+ color: var(--text-page) !important; /* No dark mode, o texto da navbar segue o tema */
+}
+
+.logo-navbar {
+ width: 80px !important; /* Largura fixa para o logo */
+ height: auto !important;  /* Mantém a proporção da imagem */
+}
+
+/* Estilo para links da navbar e dropdowns */
+.link-dourado {
+ color: #B38B52 !important; /* Cor dourada para os links */
+}
+
+.navbar .nav-link:hover,
+.navbar .dropdown-item:hover {
+ color: #B38B52 !important;  /* Texto dourado no hover */
+ background-color: #b38b6868 !important; /* Fundo rosê suave no hover (dourado com opacidade) */
+ transition: all 0.3s ease;  /* Transição suave para o efeito de hover */
+ border-radius: 5px; /* Cantos arredondados no hover */
+}
+
+/* Estilo para o campo de busca na navbar */
+.input-search-wide {
+ width: 400px;  /* Largura do campo de busca */
+ margin-right: 1rem;  /* Margem para afastar do carrinho */
+}
+
+/* Responsividade para o campo de busca em telas pequenas */
+@media (max-width: 576px) {
+ .input-search-wide {
+ width: 100% !important; /* Ocupa toda a largura em telas pequenas */
+ min-width: 0;
+ margin-right: 0;
+ }
+}
+
+/* Estilo para o ícone da lupa e seu botão */
+.lupa-dourada {
+ color: #B38B52; /* Cor dourada para o ícone da lupa */
+ font-size: 20px;
+}
+
+.lupa-btn {
+ background-color: #f4f1ea; /* Cor de fundo do botão da lupa */
+ cursor: pointer; /* Muda o cursor para mãozinha */
+}
+
+.lupa-btn:hover {
+ background-color: #b38b6868; /* Tom mais escuro no hover do botão da lupa */
+}
+
+/* Estilo para o campo de input de busca ao passar o mouse */
+.form-control:hover {
+ background-color: #b38b6868; /* Fundo rosê suave no hover do input (dourado com opacidade) */
+ transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+/*Carrinho de Compras (Modal e Botão)
+ Estilos relacionados ao ícone e modal do carrinho.*/
+#cart-button {
+background: none; /* Remove fundo padrão do botão */
+ border: none;  /* Remove borda padrão do botão */
+ padding: 8px;  /* Ajuste do tamanho do botão */
+ border-radius: 4px; /* Cantos arredondados */
+ background-color: #F4F1EA; /* Fundo rosê claro para o botão do carrinho */
+}
+
+#cart-button .bi-cart-fill {
+ color: #B38B52 !important; /* Ícone do carrinho em dourado */
+}
+
+#cart-count {
+ font-size: .75rem;
+ background-color: #B38B52 !important; /* Cor de fundo dourada para a badge (bolinha) */
+ color: white; /* Garante que o número na badge seja legível */
+}
+/* Estilo do corpo do modal do carrinho */
+.modal-body {
+ max-height: 400px; /* Altura máxima para o corpo do modal */
+ overflow-y: auto; /* Habilita scroll vertical se o conteúdo for grande */
+}
+
+/* Fundo da página do carrinho  */
+.bg-carrinho {
+ background-color: #F4F1EA; /* Rosê claro da marca */
+}
+
+/*Carrosséis (Banner Principal, Novidades, Avaliações)
+ Estilos para os diferentes carrosséis do site.*/
+
+.meu-carousel {
+ max-height: 550px; /* Altura máxima do carrossel principal */
+ overflow: hidden; /* Oculta o excesso */
+}
+
+.meu-carousel img {
+ height: 100%;
+ width: 100%;
+ object-fit: contain; /* Exibe a imagem inteira, sem cortar */
+background-color: #F4F1EA; /* Evita fundo escuro nas laterais/topo/base */
+}
+
+.carousel-inner {
+ max-height: 500px; /* Altura máxima para o conteúdo interno do carrossel */
+ overflow: visible; /* Garante que a sombra dos cards não seja cortada */
+ padding: 0 1rem;  /* Dá um respiro nas laterais para a sombra dos cards */
+}
+
+/* Ajustes para as legendas dos banners */
+.carousel-caption {
+ background: rgba(179, 139, 82, 0.282); /* Fundo semitransparente para a legenda */
+ padding: 1rem;
+ border-radius: .5rem;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+ color: #fff; /* Texto da legenda em branco para contraste */
+}
+
+/* Estilos para o carrossel de Novidades */
+#carouselNovidades {
+ position: relative;  /* Permite posicionamento absoluto das setas */
+ margin-bottom: 3rem; /* Espaçamento abaixo do carrossel */
+}
+#carouselNovidades .carousel-item {
+    /* Por padrão, esconde o excesso, caso o media query não se aplique ou para telas maiores */
+    overflow: hidden; 
+}
+
+@media (max-width: 767.98px) { /* Para telas de celular e tablets pequenos (xs e sm) */
+    #carouselNovidades .carousel-item {
+        /* Define a altura do slide para acomodar apenas UM card.*/
+        /*height: 600px; */
+        display: block; 
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+        padding: 0 0.5rem;
+    }
+    /* Assegurar que a linha e a coluna dentro do item também se ajustem */
+    #carouselNovidades .carousel-item .row {
+        height: auto; /* Garante que a linha ocupe a altura do carousel-item */
+        margin: 0; /* Remova margens padrão se elas causarem problemas de cálculo */
+        padding: 0; /* Remova padding padrão, se houver */
+        
+    }
+    #carouselNovidades .carousel-item .col-12 {
+        height: auto; /* Garante que o card ocupe a altura disponível */
+    }
+}
+@media (max-width: 576px) {
+  #carouselNovidades .carousel-item {
+    padding: 0 1rem; /* margem lateral interna */
+  }
+}
+
+/* Estilos dos cards dentro do carrossel de Novidades */
+#carouselNovidades .card {
+ border: 2px solid rgba(179, 139, 82, 0.8) !important; /* Borda dourada suave */
+ border-radius: 8px;
+ overflow: hidden; /* Garante que a imagem não vaze da borda */
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+ background-color: #fff; /* Garante contraste com o fundo do site */
+}
+
+#carouselNovidades .card-img-top {
+ height: 250px; /* Altura fixa para as imagens dos cards */
+ width: 100%;
+ object-fit: cover;  /* Preenche sem distorcer */
+ object-position: center;
+}
+
+/* Opcional: Destaca os cards das extremidades do carrossel de Novidades */
+#carouselNovidades .carousel-item .col-md-3:first-child .card,
+#carouselNovidades .carousel-item .col-md-3:last-child .card {
+ border-color: #B38B52 !important; /* Dourado puro */
+ box-shadow: 0 4px 12px rgba(179, 139, 82, 0.4);
+}
+
+/* Posicionamento e visibilidade das setas do carrossel de Novidades */
+#carouselNovidades .carousel-control-prev,
+#carouselNovidades .carousel-control-next {
+ top: 50%;
+ transform: translateY(-50%);
+ width: auto;
+ height: auto;
+ opacity: 1 !important; /* Setas sempre visíveis */
+ z-index: 2;  /* Acima das imagens */
+}
+
+#carouselNovidades .carousel-control-prev {
+ left: -30px; /* Puxa a seta para fora */
+}
+
+#carouselNovidades .carousel-control-next {
+ right: -30px; /* Puxa a seta para fora */
+}
+
+/* Fundo semitransparente e círculo para as setas do carrossel de Novidades */
+#carouselNovidades .carousel-control-prev-icon,
+#carouselNovidades .carousel-control-next-icon {
+ background-color: #B38B52; /* Cor dourada para o fundo do ícone da seta */
+ background-size: 1.5rem 1.5rem;
+ border-radius: 50%;
+ padding: 8px;
+}
+
+/* Responsividade para o carrossel de Novidades */
+@media (max-width: 576px) {
+ #carouselNovidades {
+ margin-bottom: 3rem; /* Ajuste da margem em telas pequenas */
+}
+
+}
+
+/* Torna as setas do carousel de novidades visíveis e acessíveis no mobile */
+@media (max-width: 576px) {
+  #carouselNovidades .carousel-control-prev {
+    left: 0 !important;
+  }
+  #carouselNovidades .carousel-control-next {
+    right: 0 !important;
+  }
+}
+
+/* Estilos para o carrossel de Avaliações */
+#avaliacoes {
+clear: both;/* Garante que a seção comece abaixo dos floats */
+margin-top: 4rem;  /* Espaçamento acima da seção */
+position: relative; /* Garante que a seção não sobreponha outras */
+}
+
+#carouselAvaliacoes .card {
+ height: 100%; /* Garante altura igual dos cards */
+ border: 2px solid rgba(179, 139, 82, 0.5); /* Borda dourada suave */
+border-radius: 8px;
+}
+
+#avaliacoes .titulo-secao {
+ color: #B38B52;/* Título da seção em dourado */
+ margin-bottom: 2rem;
+}
+
+/* Posicionamento e estilização das setas do carrossel de Avaliações */
+#carouselAvaliacoes {
+ position: relative;
+}
+
+#carouselAvaliacoes .carousel-control-prev,
+#carouselAvaliacoes .carousel-control-next {
+   top: 50%;
+transform: translateY(-50%);
+ width: 48px;
+ height: 48px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#carouselAvaliacoes .carousel-control-prev {
+ left: -40px;
+}
+
+#carouselAvaliacoes .carousel-control-next {
+ right: -40px;
+}
+
+#carouselAvaliacoes .carousel-control-prev-icon,
+#carouselAvaliacoes .carousel-control-next-icon {
+ background-color: #B38B52;
+ background-size: 1.5rem 1.5rem;
+ border-radius: 50%;
+ padding: 8px;
+}
+
+/*Seções Gerais e Cards de Produtos
+ Estilos aplicados a seções e cards de produtos.*/
+section.container {
+ margin-bottom: 2.5rem; /* Espaçamento padrão para seções */
+}
+
+.titulo-secao {
+font-family: 'Playfair Display', serif; /* Fonte personalizada para títulos de seção */
+ color: #B38B52;  /* Cor dourada para títulos */
+ margin-bottom: 30px;
+ text-align: center;
+}
+
+.card-borda-dourada {
+border: none;
+ box-shadow: 0 0 8px rgba(179, 139, 82, 0.4); /* Sombra dourada suave para cards */
+ border-radius: 8px;
+}
+
+.card-img-top {
+height: 250px;
+ width: 100%;
+ object-fit: cover;  /* Corta a imagem sem distorcer */
+ object-position: center; /* Centraliza o corte */
+ border-top-left-radius: 8px;
+ border-top-right-radius: 8px;
+}
+
+/* Responsividade para imagens de cards em telas pequenas */
+@media (max-width: 576px) {
+ .card-img-top {
+ height: 160px; /* Altura reduzida em telas pequenas */
+ object-fit: contain; /* Exibe a imagem inteira sem cortar */
+ width: 100%;
+ }
+}
+
+.card-nome-produto {
+   color: #B38B52; /* Cor dourada para o nome do produto */
+font-weight: bold;
+}
+
+.card-preco {
+ color: rgba(179, 139, 82, 0.99); /* Cor dourada para o preço */
+ font-size: 1.3rem;
+ font-weight: bold;
+}
+
+/* Ajuste para os botões "Comprar" e "Detalhes" dentro dos cards */
+.card .mt-auto.d-flex {
+ flex-wrap: wrap; /* Permite que os botões quebrem linha */
+ gap: 0.5rem;  /* Espaçamento entre os botões */
+}
+
+.card .mt-auto.d-flex .btn {
+ flex: 1 1 45%;  /* Distribuição da largura para os botões */
+ min-width: 120px;
+}
+
+/* Responsividade para os botões dos cards em telas pequenas */
+@media (max-width: 576px) {
+ .card .mt-auto.d-flex .btn {
+ flex-basis: 100%; /* Ocupa a largura total em telas pequenas */
+ min-width: 0;
+ }
+}
+
+/*Botões e Cores Douradas
+ Estilos para botões primários e secundários.*/
+.text-dourado {
+ color: #B38B52 !important; /* Cor dourada para textos */
+}
+
+.btn-dourado {
+ background-color: #B38B52; /* Fundo dourado para botões primários */
+ color: rgb(255, 255, 255); /* Texto branco */
+ border: none;
+ transition: background-color 0.3s ease; /* Transição suave no hover */
+ min-width: 100px; /* Largura mínima para botões */
+}
+
+.btn-dourado:hover {
+   background-color: #a67c3c; /* Dourado mais escuro no hover */
+}
+
+/* Estilo para botões de finalizar compra */
+.btn-dourado#finish-button:hover {
+ background-color: #a67c3c; /* Dourado mais escuro no hover */
+}
+
+.btn-outline-dourado {
+  color: #B38B52;             /* Texto dourado */
+  border: 2px solid #B38B52;   /* <== ESTA LINHA DEFINE A BORDA DOURADA */
+  background-color: transparent; /* Fundo transparente */
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.btn-outline-dourado:hover {
+ background-color: #B38B52; /* Fundo dourado no hover */
+ color: white; /* Texto branco no hover */
+}
+
+/* Sidebar (Filtros e Ofertas do Dia)
+ Estilos para a barra lateral.*/
+aside {
+ margin-top: 0;
+ margin-bottom: 0;
+}
+
+.sidebar-beauren {
+ width: 250px;
+ height: 100vh;
+ background-color: #F4F1EA; /* Fundo rosê claro para o sidebar */
+}
+/* Força o aside e a coluna de produtos a preencher a altura do row */
+.row.align-items-stretch {
+ display: flex;
+ align-items: stretch;
+ min-height: 100%;
+}
+
+.sidebar, .col-md-9 {
+ display: flex;
+ flex-direction: column;
+}
+
+.sidebar .card, .col-md-9 > .row {
+ flex: 1 1 auto;
+}
+
+/* Ajuste da altura máxima do sidebar para ter scroll */
+.sidebar {
+ max-height: calc(100vh - 250px); /* Altura do sidebar considerando a navbar, etc. */
+ padding-top: 0rem;
+ margin-top: 0;
+ margin-bottom: 0rem !important;
+}
+/* Ajuste específico para o sidebar no catálogo */
+.sidebar { margin-top: 1.5rem; }
+
+/* Responsividade: Ajuste da margem do sidebar em telas médias para baixo */
+@media (max-width: 991.98px) {
+ .sidebar {
+ margin-bottom: 2rem; /* Margem inferior em telas menores */
+ }
+}
+/* Espaçamento entre itens de categoria (checkboxes) */
+.sidebar ul.list-unstyled li + li {
+ margin-top: 0.75rem;
+}
+/* Estilos para cards de Oferta do Dia no sidebar */
+.offer-card {
+ text-align: center;
+ margin-top: 1rem;
+}
+.offer-card img {
+ max-width: 100%;
+ height: auto;
+ border-radius: 4px;
+}
+
+.offer-card .old-price {
+ font-size: 0.85rem;
+ color: #888; /* Cor para o preço antigo (tachado) */
+ margin: 0.25rem 0;
+}
+
+.offer-card .new-price {
+ font-size: 1.25rem;
+ color: #B38B52; /* Cor dourada para o preço novo */
+ font-weight: bold;
+ margin: 0.25rem 0;
+}
+
+.offer-card .btn {
+ margin-top: 0.5rem;
+ font-size: 0.85rem;
+}
+/*Rodapé (Footer)
+ Estilos específicos para o rodapé do site. */
+.footer-beauren {
+ background-color: #F4F1EA; /* Cor de fundo rosê clara */
+ width: 100%;
+}
+html.dark-mode .footer-beauren {
+ background-color: var(--bg-page) !important; /* No dark mode, o footer segue o fundo do tema */
+ color: var(--text-page) !important; /* No dark mode, o texto do footer segue o tema */
+}
+
+/* Estilos para os links do rodapé */
+.link-footer {
+ text-decoration: none;
+ color: #B38B52 !important; /* Força cor dourada nos links do footer (light/dark mode) */
+}
+
+.link-footer:hover {
+ color: #a67c3c !important; /* Dourado mais escuro no hover */
+ text-decoration: underline;
+}
+/* Estilos para os ícones de redes sociais no rodapé */
+.icon-footer {
+ font-size: 28px; /* Tamanho maior para os ícones */
+text-decoration: none;
+ transition: color 0.3s ease; /* Transição suave no hover */
+ color: #B38B52 !important;/* Força cor dourada nos ícones do footer (light/dark mode) */
+}
+.icon-footer:hover {
+ color: #a67c3c !important; /* Dourado mais escuro no hover */
+}
+/*Seções Específicas
+ Estilos para páginas como FAQ, Promoções, Meus Pedidos.*/
+/* Seção de Perguntas Frequentes (FAQ) */
+.faq-section {
+ padding: 4rem 0;
+}
+/* Personalização dos botões  no FAQ */
+.accordion-button {
+ color: #B38B52;
+ font-weight: 500;
+ background-color: #fff;
+ border: 2px solid rgba(179, 139, 82, 0.2);
+}
+.accordion-button:not(.collapsed) {
+ background-color: rgba(179, 139, 82, 0.1);
+}
+
+.accordion-button::after {
+ filter: invert(40%) sepia(60%) saturate(500%) hue-rotate(10deg); /* Cor dourada para o ícone do accordion */
+}
+/* Corpo  FAQ */
+.accordion-body {
+ background-color: #fefefe;
+ border-top: 1px solid rgba(179, 139, 82, 0.2);
+}
+
+/* Remove sombra extra de itens  */
+.accordion-item {
+   box-shadow: none;
+}
+
+/* Ajuste responsivo para fonte dos botões  */
+@media (max-width: 576px) {
+ .accordion-button {
+ font-size: 0.9rem;
+ }
+}
+/* Banner de Promoções (na página de promoções) */
+.promo-banner {
+ background: linear-gradient(135deg, #b38b52d0, #f8f0e6); /* Gradiente dourado/rosê */
+ padding: 4rem 1rem;
+}
+/* Cards de promoção */
+.promotion-card img {
+ height: 200px;
+ object-fit: cover;
+}
+.desconto-badge {
+ background-color: #b38b52; /* Fundo dourado para o badge de desconto */
+ color: white;
+font-size: 0.9rem;
+ padding: 0.3rem 0.6rem;
+ border-radius: 0.25rem;
+}
+/* Ajuste de responsividade para imagens de promoção */
+@media (max-width: 576px) {
+ .promotion-card img {
+ height: 180px;
+ }
+}
+/* Badges de status nos pedidos (na página Meus Pedidos) */
+.status-badge {
+ padding: 0.4em 0.75em;
+ font-size: 0.85rem;
+ border-radius: 0.25rem;
+}
+
+.status-pendente {
+ background-color: #ffc1076b; /* Amarelo suave */
+ color: #856404;
+}
+
+.status-enviado {
+ background-color: #0d6efd33; /* Azul suave */
+ color: #084298;
+}
+
+.status-entregue {
+ background-color: #19875433; /* Verde suave */
+ color: #0f5132;
+}
+
+/* Outros / Utilitários */
+/* Botão de alternância de tema (Dark/Light Mode) */
+#theme-toggle {
+ display: block;
+ padding: 0.3rem 0.8rem; /* Botão menor */
+ border: 2px solid #B38B52;
+ background: transparent;
+ color: #B38B52;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 0.8rem; /* Fonte menor */
+ /* Posicionamento abaixo da newsletter */
+ width: fit-content; /* Ajusta a largura ao conteúdo */
+ margin-top: 1rem; /* Espaçamento da newsletter */
+ margin-left: auto; /* Centraliza se houver espaço, alinha à direita no footer */
+ margin-right: auto;
+}
+
+.page-item-active .page-link {
+ background-color: #B38B52 !important; /* Fundo dourado para o item ativo */
+ color: white !important; /* Texto branco para contraste */
+}
+
+/*Paginação Personalizada
+ Estilos para os botões de paginação no catálogo.*/
+/* Altera a cor do botão da página ativa da paginação */
+.pagination .page-item.active .page-link {
+ background-color: #B38B52; /*  cor dourada */
+ border-color: #B38B52;  /* Borda também dourada */
+ color: white !important; /* Texto branco para contraste */
+}
+
+/* Estiliza os botões de paginação normais para seguir a identidade visual */
+.pagination .page-link {
+ color: #B38B52; /* Cor dourada para os números de página não-ativos */
+ border-color: #ccc; /* Borda cinza suave ou dourada discreta */
+ transition: all 0.3s ease;
+}
+/* Estilo ao passar o mouse sobre os botões de paginação */
+.pagination .page-link:hover {
+ background-color: #f4f1ea; /* cor rosê claro */
+  color: #a67c3c; /* Dourado mais escuro no texto */
+border-color: #B38B52;
+}
+
+/*  Garante que o texto dos links de paginação em modo escuro seja visível */
+html.dark-mode .pagination .page-link {
+color: var(--text-page); /* Cor do texto do tema */
+ background-color: var(--bg-page); /* Fundo do tema */
+ border-color: #555; /* Borda mais escura */
+}
+
+html.dark-mode .pagination .page-link:hover {
+ background-color: #222; /* Fundo mais escuro no hover para dark mode */
+ color: #B38B52; /* Texto dourado no hover */
+}
+
+html.dark-mode .pagination .page-item.active .page-link {
+ background-color: #B38B52; /* Dourado para a página ativa no dark mode */
+ border-color: #B38B52;
+color: white !important;
+}
+/* Ajuste de altura padrão para o corpo dos cards do carrossel de novidades */
+#carouselNovidades .card-body {
+  min-height: 280px; /* Ajuste esse valor conforme o que ficar melhor visualmente */
+  display: flex;
+  flex-direction: column;
+}
+
+h3{
+  margin-top: 150px}

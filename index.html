@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauren Cosméticos-inicio</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+  <!--Aqui comeca a nav-->
+  <nav class="navbar navbar-expand-lg navbar-rose">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="img/Logo.png" alt="logo" class="logo-navbar" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active link-dourado" aria-current="page" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dourado" href="promocoes.html">Promoções</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dourado" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dourado" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Mais
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item text-dourado" href="#">Minha conta</a>
+              </li>
+              <li>
+                <a class="dropdown-item text-dourado" href="meus_pedidos.html">Meus pedidos</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item text-dourado" href="#">Sair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <div class="input-group input-search-wide">
+            <input type="search" class="form-control" placeholder="O que você está buscando hoje?"
+              aria-label="Buscar" />
+            <button class="input-group-text lupa-btn" type="submit" aria-label="Buscar">
+              <i class="bi bi-search lupa-dourada"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- botão do carrinho -->
+        <div class="d-flex align-items-center ms-3">
+          <button id="cart-button" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="bi bi-cart-fill fs-4 text-dourado"></i>
+            <span id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+    <!--Aqui termina a nav-->
+  </nav>
+  <!--INÍCIO DO CAROUSEL-->
+  <div id="carouselExampleAutoplaying" class="carousel slide meu-carousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="img/benner.png" class="d-block w-100" alt="banner1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="text-white">Poder Natural</h5>
+          <p class="text-white">Revitalize seus cabelos com a força e o brilho que só a natureza Beauren oferece.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/banner 0.png" class="d-block w-100" alt="banner2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="text-white">Essência Radiante</h5>
+          <p class="text-white">Deixe sua presença marcar cada instante com a fragrância que reflete sua personalidade
+            vibrante.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/bannerprimcomp.png" class="d-block w-100" alt="m1">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!--FIM DO CAROUSEL-->
+  <section class="container mt-5">
+    <h2 class="titulo-secao text-center mb-4">Mais Vendidos</h2>
+
+    <div class="row align-items-stretch">
+      <!-- INÍCIO DO SIDEBAR: categorias + filtro -->
+      <aside class="col-md-3 md-4 h-100 ">
+        <div class="card p-3 card-borda-dourada h-100">
+          <div style="padding-top: 2rem;"></div>
+          <h5 class="text-dourado">Categorias</h5>
+          <!-- checkboxes -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="Maquiagem" id="cat-maquiagem">
+            <label class="form-check-label" for="cat-maquiagem">Maquiagem</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="Cabelos" id="cat-cabelos">
+            <label class="form-check-label" for="cat-cabelos">Cabelos</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="Perfumes" id="cat-perfumes">
+            <label class="form-check-label" for="cat-perfumes">Perfumes</label>
+          </div>
+          <div class="form-check ">
+            <input class="form-check-input" type="checkbox" name="category" value="Hidratantes" id="cat-hidratantes">
+            <label class="form-check-label" for="cat-hidratantes">Hidratantes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="Sabonetes" id="cat-sabonetes">
+            <label class="form-check-label" for="cat-sabonetes">Sabonetes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="Acessórios" id="cat-acessorios">
+            <label class="form-check-label" for="cat-acessorios">Acessórios</label>
+          </div>
+
+          <hr>
+
+          <h5 class="text-dourado">Filtrar por Preço</h5>
+          <div class="mb-2">
+            <input type="number" id="priceMin" class="form-control" placeholder="Mínimo">
+          </div>
+          <div class="mb-3">
+            <input type="number" id="priceMax" class="form-control" placeholder="Máximo">
+          </div>
+
+          <button id="filter-btn" type="button" class="btn btn-dourado w-100">Aplicar Filtro</button>
+          <hr>
+          <h5 class="text-dourado">Ofertas do Dia</h5>
+          <div class="card p-2 mb-3 card-borda-dourada text-center">
+            <img src="img/B1.png" class="img-fluid mb-2" alt="Oferta do Dia">
+            <p class="small text-muted"><s>R$ 199,90</s></p>
+            <p class="h5 text-dourado">R$ 89,90</p>
+            <a href="promocoes.html" class="btn btn-sm btn-dourado mt-2">Ver Oferta</a>
+          </div>
+          <div class="card p-2 mb-3 card-borda-dourada text-center">
+            <img src="img/A2.png" class="img-fluid mb-2" alt="Oferta do Dia">
+            <p class="small text-muted"><s>R$ 310,90</s></p>
+            <p class="h5 text-dourado">R$ 259,90</p>
+            <a href="promocoes.html" class="btn btn-sm btn-dourado mt-2">Ver Oferta</a>
+          </div>
+          <div class="card p-2 mb-3 card-borda-dourada text-center">
+            <img src="img/F1.png" class="img-fluid mb-2" alt="Oferta do Dia">
+            <p class="small text-muted"><s>R$ 169,90</s></p>
+            <p class="h5 text-dourado">R$ 149,90</p>
+            <a href="promocoes.html" class="btn btn-sm btn-dourado mt-2">Ver Oferta</a>
+          </div>
+          <div class="card p-2 mb-3 card-borda-dourada text-center">
+            <img src="img/C1.png" class="img-fluid mb-2" alt="Oferta do Dia">
+            <p class="small text-muted"><s>R$ 99,90</s></p>
+            <p class="h5 text-dourado">R$ 69,90</p>
+            <a href="promocoes.html" class="btn btn-sm btn-dourado mt-2">Ver Oferta</a>
+          </div>
+
+        </div>
+
+      </aside>
+      <!--FINAL DO SIDEBAR-->
+
+
+
+
+
+      <!--INÍCIO DO BLOCO DE CARDS-->
+      <div class="col-md-9 h-100">
+        <div class="row">
+          <!--PRIMEIRO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Hidratantes" data-price="96.00">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/P1.jpg" class="card-img-top" alt="Hidratante Facial">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Hidratante Facial</h5>
+                <p class="card-text">Fórmula nutritiva que proporciona hidratação intensa e duradoura. Seu uso diário
+                  deixa a pele suave, radiante e protegida contra agressões externas.</p>
+                <p class="card-preco mb-2">R$ 96,00</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm add-to-cart" data-id="1" data-name="Hidratante Facial"
+                    data-price="96.00">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--SEGUNDO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Perfumes" data-price="259.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/A1.jpg" class="card-img-top" alt="Perfume Rosé">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Perfume Rosé</h5>
+                <p class="card-text">Uma fragrância sofisticada e delicada com notas florais e frutadas. Criado para
+                  mulheres que buscam marcar presença com suavidade e elegância.</p>
+                <p class="card-preco mb-2">R$ 259,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm add-to-cart" data-id="3" data-name="Perfume Rosé"
+                    data-price="259.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--TERCEIRO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Maquiagem" data-price="139.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/E1.jpg" class="card-img-top" alt="Iluminador Corporal">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Iluminador Corporal</h5>
+                <p class="card-text">Cremoso e cintilante, proporciona um toque dourado elegante, perfeito para eventos
+                  noturnos ou um glow diário. Realce o brilho natural da sua pele. </p>
+                <p class="card-preco mb-2">R$ 139,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm  add-to-cart" data-id="4" data-name="Iluminador Corporal"
+                    data-price="139.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--QUARTO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Maquiagem" data-price="249.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/G2.png" class="card-img-top" alt="Paleta de Sombras Neutras">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Paleta de Sombras</h5>
+                <p class="card-text">Paleta de tons neutros com acabamentos mattes e cintilantes. Ideal para criar looks
+                  versáteis do básico ao sofisticado. Alta pigmentação e fixação prolongada.</p>
+                <p class="card-preco mb-2">R$ 249,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm  add-to-cart" data-id="5" data-name="Paleta de Sombras"
+                    data-price="249.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--QUINTO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Maquiagem" data-price="189.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/Q1.jpg" class="card-img-top" alt="Sérum Radiante">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Sérum Radiante</h5>
+                <p class="card-text">Um concentrado poderoso que revitaliza e ilumina a pele. Com ativos antioxidantes,
+                  ajuda a uniformizar o tom da pele e suavizar linhas finas, revelando um rosto mais jovem e luminoso.
+                </p>
+                <p class="card-preco mb-2">R$ 189,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm  add-to-cart" data-id="6" data-name="Sérum Radiante"
+                    data-price="189.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--SEXTO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Maquiagem" data-price="129.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/K3.png" class="card-img-top" alt="Blush Cintilante">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Blush Cintilante</h5>
+                <p class="card-text">Com textura sedosa e partículas luminosas, ele oferece um toque de cor natural e um
+                  brilho saudável. Fácil de esfumar, realça as maçãs do rosto com elegância.</p>
+                <p class="card-preco mb-2">R$ 129,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm add-to-cart" data-id="7" data-name="Blush Cintilante"
+                    data-price="129.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--SETIMO  CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Maquiagem" data-price="159.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/R1.jpg" class="card-img-top" alt="Primer Facial">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Primer Facial</h5>
+                <p class="card-text">Suaviza os poros, controla a oleosidade e prolonga a duração da make, deixando a
+                  pele com acabamento aveludado. Crie a base perfeita para sua maquiagemcom ele.</p>
+                <p class="card-preco mb-2">R$ 159,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm  add-to-cart" data-id="8" data-name="Primer Facial"
+                    data-price="159.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--OITAVO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Maquiagem" data-price="159.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/s1.png" class="card-img-top" alt="Base Soft Matte">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Base Soft Matte</h5>
+                <p class="card-text">Base líquida com acabamento matte natural. Resistente à água e ao suor, oferece
+                  longa duração e sensação leve, ideal para todos os tipos de pele.</p>
+                <p class="card-preco mb-2">R$ 159,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm  add-to-cart" data-id="9" data-name="Base Soft Matte"
+                    data-price="159.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--NONO CARD-->
+          <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex" product-card data-category="Cabelos" data-price="69.90">
+            <div class="card h-100 card-borda-dourada">
+              <img src="img/500.png" class="card-img-top" alt="Shampoo Hidratação">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title card-nome-produto">Shampoo</h5>
+                <p class="card-text">Shampoo para todos os tipos de cabelo. Promove alta hidratação e deixa os cabelos
+                  mais brilhosos.</p>
+                <p class="card-preco mb-2">R$ 69,90</p>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="#" class="btn btn-dourado btn-sm  add-to-cart" data-id="2" data-name="Shampoo Hidratação"
+                    data-price="69.90">Comprar</a>
+                  <a href="detalhes_produto.html" class="btn btn-outline-dourado btn-sm ">Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+  <!-- FIM DO BLOCO DE CARDS -->
+
+
+
+  <!-- INÍCIO DA SEÇÃO NOVIDADES -->
+  <section class="container mt-5">
+    <h2 class="titulo-secao">Novidades</h2>
+    <!--COMEÇO DO CAROUSEL NOVIDADES (1ªPARTE)-->
+    <div id="carouselNovidades" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="row row-cols-1  row-cols-md-3 row-cols-lg-4 g-4">
+            <!--PRIMEIRO CARD -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" product-card data-category="Maquiagem" data-price="79.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/J1.png" class="card-img-top img-fluid" alt="Contorno em pó">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Contorno em pó</h5>
+                  <p class="card-text">Com textura aveludada e acabamento matte natural, ele realça os traços do rosto
+                    com sofisticação. Ideal para esculpir, definir e aquecer a pele.</p>
+                  <p class="card-preco mb-2">R$ 79,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="11" data-name="Contorno em pó"
+                      data-price="79.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--SEGUNDO CARD-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" product-card data-category="Acessórios" data-price="149.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/F1.png" class="card-img-top img-fluid" alt="Necessaire Beauren">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Necessaire Beauren</h5>
+                  <p class="card-text">Compacta, elegante e funcional. A Necessaire Beauren é perfeita para organizar
+                    seus cosméticos com estilo. Ideal para o dia a dia ou viagens. </p>
+                  <p class="card-preco mb-2">R$ 149,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="13" data-name="Necessaire Beauren"
+                      data-price="149.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--TERCEIRO CARD-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" product-card data-category="Sabonetes" data-price="129.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/D1.png" class="card-img-top img-fluid" alt="Kit de sabonetes">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Kit de sabonetes</h5>
+                  <p class="card-text">Com fragrâncias suaves e fórmula hidratante, ele limpa suavemente a pele,
+                    deixando-a perfumada e macia. Uma experiência sensorial delicada e sofisticada.</p>
+                  <p class="card-preco mb-2">R$ 129,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="15" data-name="Kit de sabonetes" data-price="129.90"">Comprar</a>
+                    <a href=" detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--QUINTO CARD-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" product-card data-category="Maquiagem" data-price="89.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/N1.png" class="card-img-top img-fluid" alt="Batom Matte">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Batom Matte</h5>
+                  <p class="card-text">Alta pigmentação, acabamento aveludado e longa duração. Desliza suavemente nos
+                    lábios, proporcionando cor intensa sem ressecar. </p>
+                  <p class="card-preco mb-2">R$ 89,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="14" data-name="Batom Matte"
+                      data-price="89.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FINAL DO CAROUSEL NOVIDADES (1ªPARTE)-->
+
+        <!--COMEÇO DO CAROUSEL NOVIDADES (2ªPARTE)-->
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+            <!--PRIMEIRO CARD -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 " product-card data-category="Cabelos" data-price="369.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/H1.png" class="card-img-top img-fluid" alt="Kit Hidratação">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Kit Hidratação</h5>
+                  <p class="card-text">Shampoo, condicionador e leave-in com ativos nutritivos que limpam, e protegem os
+                    fios. Promove brilho, maciez e hidratação profunda desde a primeira aplicação.</p>
+                  <p class="card-preco mb-2">R$ 369,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="10" data-name="Kit Hidratação"
+                      data-price="369.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--SEGUNDO CARD -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" product-card data-category="Hidratantes" data-price="89.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/B2.png" class="card-img-top img-fluid" alt="Creme Hidratante Corporal">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Creme Hidratante </h5>
+                  <p class="card-text">Textura cremosa e absorção imediata. Enriquecido com óleos vegetais e vitamina E.
+                    Deixa a pele macia, nutrida e delicadamente perfumada por horas.</p>
+                  <p class="card-preco mb-2">R$ 89,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="12" data-name="Creme Hidratante Corporal"
+                      data-price="89.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--TERCEIRO CARD -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" product-card data-category="Maquiagem" data-price="119.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/L2.png" class="card-img-top img-fluid" alt="Paleta Duo">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Paleta Duo</h5>
+                  <p class="card-text">Duas cores cintilantes em uma paleta compacta e versátil. Ideal para iluminar
+                    olhos e rosto com um toque de brilho sofisticado. Alta fixação e textura suave</p>
+                  <p class="card-preco mb-2">R$ 119,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="duo-palette" data-name="Paleta Duo"
+                      data-price="119.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--QUARTO CARD -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 " product-card data-category="Cabelos" data-price="299.90">
+              <div class="card h-100 card-borda-dourada">
+                <img src="img/M2.png" class="card-img-top img-fluid" alt="Kit Banho Premium">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title card-nome-produto">Kit Banho Premium</h5>
+                  <p class="card-text">Para um momento de autocuidado. Com shampoo, condicionador, sabonete em barra e
+                    óleo corporal, fórmulados para cuidar dos cabelos e da pele com luxo.</p>
+                  <p class="card-preco mb-2">R$ 299,90</p>
+                  <div class="mt-auto d-flex gap-2">
+                    <a href="#" class="btn btn-dourado" data-id="16" data-name="Kit Banho Premium"
+                      data-price="299.90">Comprar</a>
+                    <a href="detalhes_produto.html" class="btn btn-outline-dourado">Detalhes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--BOTÕES DO CAROUSEL (ANTERIOR E PROXIMO)  -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselNovidades" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselNovidades" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+  </section>
+
+
+  
+
+  <!-- <div class="mt-5"> -->
+    <!-- Seção: Avaliações de Clientes em Carrossel -->
+    <section id="avaliacoes" class="container my-5">
+      <h3 class="titulo-secao text-center mb-4">O que dizem nossos clientes</h3>
+
+      <div id="carouselAvaliacoes" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-inner">
+
+          <!-- SLIDE 1 DO CAROUSEL DE AVALIAÇÃO-->
+          <div class="carousel-item active">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <!-- Avaliação 1 -->
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="mb-2 text-warning text-center">
+                      <!--ESTRELAS -->
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="card-text">“Amei o perfume! Embalagem linda e a fragrância dura o dia todo.”</p>
+                  </div>
+                  <div class="card-footer text-end">
+                    <small class="text-muted">— Andressa Duarte</small>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Avaliação 2 -->
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="mb-2 text-warning text-center">
+                      <!--ESTRELAS -->
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </div>
+                    <p class="card-text">“Produtos de ótima qualidade e entrega super rápida. Recomendo!”</p>
+                  </div>
+                  <div class="card-footer text-end">
+                    <small class="text-muted">— Celeste Aguiar</small>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- Avaliação 3 -->
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="mb-2 text-warning text-center">
+                      <!--ESTRELAS -->
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="card-text">“Atendimento excelente e preço justo. Comprarei de novo com certeza.”</p>
+                  </div>
+                  <div class="card-footer text-end">
+                    <small class="text-muted">— Jacqueline Matiello</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 DO CAROUSEL DE AVALIAÇÃO -->
+          <div class="carousel-item">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <!-- Avaliação 4 -->
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="mb-2 text-warning text-center">
+                      <!--ESTRELAS -->
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    <p class="card-text">“A máscara facial muscula minha pele como nunca. Sensação de spa em casa!”</p>
+                  </div>
+                  <div class="card-footer text-end">
+                    <small class="text-muted">— Juliana Muniz</small>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Avaliação 5 -->
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="mb-2 text-warning text-center">
+                      <!--ESTRELAS -->
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="card-text">“O gloss hidratante deixa meus lábios super brilhantes e macios.”</p>
+                  </div>
+                  <div class="card-footer text-end">
+                    <small class="text-muted">— Letícia Lima</small>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Avaliação 6 -->
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="mb-2 text-warning text-center">
+                      <!--ESTRELAS -->
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    <p class="card-text">“O creme para mãos virou meu vício – textura leve e absorção instantânea!”</p>
+                  </div>
+                  <div class="card-footer text-end">
+                    <small class="text-muted">— Ana C.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--BOTÕES DO CAROUSEL (ANTERIOR E PROXIMO)  -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAvaliacoes" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAvaliacoes" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+
+      </div>
+    </section>
+
+
+    <!--INICIO DO FOOTER -->
+    <footer class="py-5 footer-beauren">
+      <div class="container-fluid px-5">
+
+        <!-- LINHA PRINCIPAL COM DUAS COLUNAS LADO A LADO (ESQUERDA E DIREITA) -->
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+
+          <!-- COLUNA ESQUERDA -->
+          <div class="mb-3">
+
+            <h5 class="d-flex content-center gap-4">
+              <!--ICONES DE REDES SOCIAIS  -->
+              <a class="icon-footer" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+              <a class="icon-footer" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+              <a class="icon-footer" href="https://wa.me/28999077796"><i class="bi bi-whatsapp"></i></a>
+            </h5>
+
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="historia.html" class="nav-link p-0 link-footer">Nossa História</a></li>
+              <li class="nav-item mb-2"><a href="perguntas_frequentes.html" class="nav-link p-0 link-footer">Perguntas
+                  frequentes</a></li>
+              <li class="nav-item mb-2"><a href="politica_privacidade.html" class="nav-link p-0 link-footer">Política de
+                  Privacidade</a></li>
+              <li class="nav-item mb-2"><a href="contato.html" class="nav-link p-0 link-footer">Contatos</a></li>
+            </ul>
+          </div>
+
+          <!-- COLUNA DIREITA (NEWSLETTER) -->
+          <div id="newsletter-wrapper" class="mb-3" style="max-width: 400px;">
+            <form>
+              <h5 class="text-dourado">Assine nossa newsletter</h5>
+              <p class="text-dourado">Não perca as últimas novidades e ofertas.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <input id="newsletter1" type="email" class="form-control" placeholder="Endereço de email" />
+                <button class="btn btn-dourado" type="submit">Assinar</button>
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <div class="text-center py-4 my-4 border-top">
+        <p class="text-dourado mb-3">© 2025 Beauren. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- CSS do Bootstrap -->
+
+    <!--  JANELA QUE APARECE QUANDO CLICA NO CARRINHO -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Meu Carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Qtd.</th>
+                  <th>Preço</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+              </tbody>
+            </table>
+            <h5 class="text-end">Total: R$ <span id="cart-total">0.00</span></h5>
+            <div class="mt-3">
+  <label for="cupom" class="form-label">Cupom de Desconto</label>
+  <div class="input-group">
+    <input type="text" id="cupom" class="form-control" placeholder="Digite o cupom" />
+    <button id="aplicar-cupom" class="btn btn-dourado">Aplicar</button>
+  </div>
+  <small id="mensagem-cupom" class="text-success d-block mt-2"></small>
+</div>
+          </div>
+          
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button id="finish-button" class="btn btn-dourado">Finalizar Compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <script src="js/cart.js"></script>
+    <script src="js/home-filtro.js"></script>
+
+</body>
+
+</html>
