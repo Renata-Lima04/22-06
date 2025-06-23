@@ -69,7 +69,7 @@ Clone o repositório:
 
 Bash
 
-git clone (https://github.com/Renata-Lima04/BeaurenFinalizado.git)
+git clone (https://github.com/Renata-Lima04/22-06.git)
 
 Navegue até a pasta do projeto:
 
